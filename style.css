@@ -1,0 +1,11 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffe66d;
+}
+
+/* Tailwind CSS classes are used directly in the HTML for most styling */
+/* This file is for any additional custom styles if needed */
+/* For this project, it primarily handles the font import and body background color */

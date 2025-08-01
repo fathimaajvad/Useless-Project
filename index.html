@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procrastination Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="procrastination-container bg-yellow-400 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-auto relative overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-6">
+            <h1 class="text-4xl font-bold text-purple-700">Procrastination Timer</h1>
+            <p class="text-sm text-gray-700 mt-1">The only timer that judges you... lovingly.</p>
+        </div>
+
+        <!-- Timer Display Section -->
+        <div class="text-center mb-6">
+            <div id="timerDisplay" class="text-8xl font-bold text-purple-700 mb-2">25:00</div>
+            <p id="timerStatus" class="text-xl text-gray-700">Work Time</p>
+            <div class="w-full bg-pink-200 h-2.5 rounded-full mt-4">
+                <div id="progressBar" class="bg-purple-500 h-full rounded-full" style="width: 100%;"></div>
+            </div>
+        </div>
+        
+        <!-- Virtual Weed Container -->
+        <div id="weedContainer" class="text-center text-red-500 text-3xl mb-4"></div>
+        
+        <!-- Message Box Section -->
+        <div id="messageBox" class="bg-white p-4 rounded-xl shadow-inner text-center text-gray-800 mb-6 transition-all duration-300">
+            Ready to procrastinate productively?
+        </div>
+
+        <!-- Custom Timer Lengths Section -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <div class="flex flex-col items-center">
+                <label for="workTimeInput" class="text-gray-700 text-sm mb-1">Work (min)</label>
+                <input type="number" id="workTimeInput" value="25" min="1" class="w-24 text-center p-2 rounded-lg border-2 border-purple-300 focus:outline-none focus:border-purple-500">
+            </div>
+            <div class="flex flex-col items-center">
+                <label for="breakTimeInput" class="text-gray-700 text-sm mb-1">Break (min)</label>
+                <input type="number" id="breakTimeInput" value="5" min="1" class="w-24 text-center p-2 rounded-lg border-2 border-purple-300 focus:outline-none focus:border-purple-500">
+            </div>
+        </div>
+        
+        <!-- Control Buttons Section -->
+        <div class="grid grid-cols-2 gap-4">
+            <button id="startButton" class="col-span-1 bg-purple-500 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-purple-600 transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+                Start
+            </button>
+            <button id="resetButton" class="col-span-1 bg-white text-gray-800 font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.86-1.582A8.995 8.995 0 0118 10a9.001 9.001 0 01-15.022 1.488m15.022-1.488L15.992 14.5m4.02-4.02h-4.02" />
+                </svg>
+                Reset
+            </button>
+        </div>
+
+        <!-- Additional Feature Buttons -->
+        <div class="grid grid-cols-2 gap-4 mt-6">
+            <button id="excuseButton" class="col-span-1 bg-pink-300 text-gray-800 font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-pink-400 transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.674M12 3v1m6.364 1.636l-.707.707M4.343 5.657l.707.707m0 9.94l-.707.707m11.314 0l-.707-.707m0-11.314l.707-.707m-5.36 12.062a3 3 0 01-5.753.844L6.96 17.5l.89-.89a3 3 0 014.243 0l.89.89L17.26 12.553a3 3 0 01-5.753-.844z" />
+                </svg>
+                Need an Excuse?
+            </button>
+            <button id="achievementsButton" class="col-span-1 bg-green-300 text-gray-800 font-bold py-4 px-6 rounded-xl shadow-lg hover:bg-green-400 transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2h-1m0-2h.007M20 18v-1c0-1.879-2.079-3.414-4.87-4.108m-5.592-2.185A3.011 3.011 0 0012 8a3.011 3.011 0 00-3.008 3.007c0 1.666 1.342 3.008 3.008 3.008m0 0a3.011 3.011 0 003.008-3.008" />
+                </svg>
+                <span id="achievementsCounter">Achievements: 0</span>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
