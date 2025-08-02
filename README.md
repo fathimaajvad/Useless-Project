@@ -1,11 +1,11 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Procrastination Timer] 🎯
+# Procrastination Timer 🎯
 
 
 ## Basic Details
-### Team Name: [GLITCH]
+### Team Name: GLITCH
 
 
 ### Team Members
@@ -74,11 +74,13 @@ For Hardware:
 ![Components](Add photo of your components here)
 *List out all components shown*
 
-![Build](Add photos of build process here)
+![![WhatsApp Image 2025-08-02 at 05 46 21_08997a88](https://github.com/user-attachments/assets/357bcc5c-bfca-4d29-995f-d6fca87f3038)
+](Add photos of build process here)
 *Explain the build steps*
 
-![Final](Add photo of final product here)
-*Explain the final build*
+![<img width="1114" height="633" alt="image" src="https://github.com/user-attachments/assets/99404770-205e-4c7b-b755-9f03cc8ca0a2" />
+](Add photo of final product here)
+The final version of this project is a single-page HTML application designed to be a humorous and self-aware "Procrastination Timer." It's built using HTML, a CDN-based Tailwind CSS for styling, and JavaScript for all the logic. The core functionality includes a countdown timer, a progress bar, and customizable work/break durations. The project's humor comes from its "useless" but technically functional features, such as the Gemini API which provides sarcastic roasts, and the Web Speech API which reads messages aloud. All these elements work together to create a lighthearted and ironic take on a standard productivity tool.
 
 ### Project Demo
 # Video
@@ -86,7 +88,7 @@ For Hardware:
 *Explain what the video demonstrates*
 
 # Additional Demos
-[Add any extra demo materials/links]
+[https://fathimaajvad.github.io/Useless-Project/]
 
 ## Team Contributions
 - [Fathima P Ajvad]: [Frontend]
